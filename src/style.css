@@ -37,6 +37,11 @@ ul{
 .overview{
     margin-bottom: 20px;
 }
+
+.weather-temperature{
+   display: flex;
+ 
+}
 .weather-temperature img{
     margin-right: 5px;
     height: 64px;
@@ -47,7 +52,7 @@ ul{
     font-size: 64px;
     line-height: 64px;
     font-weight: 400;
-
+    
 }
 .weather-temperature .units{
     position: relative;
