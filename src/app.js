@@ -37,9 +37,34 @@ function displayTemperature(response){
         "alt",
         response.data.weather[0].description);
 }
+
+function search(city){
+
 let apiKey="716045c92c880fd62174c7a8b0b50a0d";
-let cityName ="Metlika";
 let units ="metric";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${units}`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
 axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event){
+    event.preventDefault();
+    let cityElement =document.querySelector("#city-input");
+    search(cityElement.value);
+}
+
+search("Metlika");
+
+let form =document.querySelector("#search-form");
+form-addEventListener("submit", handleSubmit);
+
+function displayFahreniheitTemperature(event){
+    event.preventDefault();
+    let fahrenheitTemperature = (14*9)/5+32;
+    let temperatureElement=document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click",displayFahreniheitTemperature);
