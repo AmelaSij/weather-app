@@ -69,7 +69,8 @@ li:first-letter{
     cursor : default;
     }
 
-.weather-temperature .active:hover {
+
+.units a {
     text-decoration: none;
 }
 .weather-forecast {
